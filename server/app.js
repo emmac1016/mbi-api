@@ -4,6 +4,7 @@ import generateRouter from './routes/generate';
 import indexRouter from './routes/index';
 import logger from 'morgan';
 import path from 'path';
+import verifyRouter from './routes/verify';
 
 var app = express();
 
@@ -15,5 +16,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', indexRouter);
 app.use('/generate', generateRouter);
+app.use('/verify', verifyRouter);
 
 export default app;

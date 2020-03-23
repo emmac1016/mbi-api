@@ -2,8 +2,8 @@ import express from 'express';
 
 var router = express.Router();
 
-/* GET generate MBI */
-router.get('/', function(req, res, next) {
+/* POST verify MBI */
+router.post('/', function(req, res, next) {
   res.json({});
 });
 
