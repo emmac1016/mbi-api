@@ -1,9 +1,9 @@
 import cookieParser from 'cookie-parser';
 import express from 'express';
+import generateRouter from './routes/generate';
 import indexRouter from './routes/index';
 import logger from 'morgan';
 import path from 'path';
-import usersRouter from './routes/users';
 
 var app = express();
 
@@ -14,6 +14,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/generate', generateRouter);
 
 export default app;
