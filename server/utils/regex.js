@@ -23,17 +23,17 @@ const numeric = '[0-9]';
 const getRegex = (strict = false) => {
   const enforceDash = strict ? '' : '?';
   const mbiFormat = [
-    `^[1-9]`,
-    `${alphabetic}`,
-    `${alphaNumeric}`,
-    `${numeric}{1}-${enforceDash}`,
-    `${alphabetic}`,
-    `${alphaNumeric}`,
+    '[1-9]',
+    alphabetic,
+    alphaNumeric,
     `${numeric}-${enforceDash}`,
-    `${alphabetic}`,
-    `${alphabetic}`,
-    `${numeric}`,
-    `${numeric}`
+    alphabetic,
+    alphaNumeric,
+    `${numeric}-${enforceDash}`,
+    alphabetic,
+    alphabetic,
+    numeric,
+    numeric
   ];
 
   return new RegExp(mbiFormat.join(''));
